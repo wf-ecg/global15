@@ -28,6 +28,8 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
 
+$.iff = $['if']; // hide errors in IDE
+
 var AUTOPREFIXER_BROWSERS = [
 'ie >= 10',
 'ie_mob >= 10',
@@ -49,7 +51,7 @@ gulp.task('jshint', function () {
     }))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.iff(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 // Optimize Images
@@ -109,7 +111,7 @@ gulp.task('styles', function () {
     }))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
-    .pipe($.if('*.css', $.csso()))
+    .pipe($.iff('*.css', $.csso()))
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({
         title: 'styles'
@@ -125,13 +127,13 @@ gulp.task('html', function () {
     return gulp.src('app/**/*.html')
     .pipe(assets)
     // Concatenate And Minify JavaScript
-    .pipe($.if('*.js', $.uglify({
+    .pipe($.iff('*.js', $.uglify({
         preserveComments: 'some'
     })))
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
+    .pipe($.iff('*.css', $.uncss({
         html: [
         'app/index.html',
         'app/styleguide.html'
@@ -144,13 +146,13 @@ gulp.task('html', function () {
     })))
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.csso()))
+    .pipe($.iff('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
+    .pipe($.iff('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({
