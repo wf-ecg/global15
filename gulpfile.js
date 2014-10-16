@@ -44,26 +44,26 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src('app/scripts/**/*.js') //
     .pipe(reload({
         stream: true,
-        once: true
-    }))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
+        once: true,
+    })) //
+    .pipe($.jshint()) //
+    .pipe($.jshint.reporter('jshint-stylish')) //
     .pipe($.iff(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 // Optimize Images
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
+    return gulp.src('app/images/**/*') //
     .pipe($.cache($.imagemin({
         progressive: true,
-        interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size({
-        title: 'images'
+        interlaced: true,
+    }))) //
+    .pipe(gulp.dest('dist/images')) //
+    .pipe($.size({ //
+        title: 'images',
     }));
 });
 
@@ -72,21 +72,22 @@ gulp.task('copy', function () {
     return gulp.src([
         'app/*',
         '!app/*.html',
-        'node_modules/apache-server-configs/dist/.htaccess'
+        'node_modules/apache-server-configs/dist/.htaccess',
         ], {
-            dot: true
-        }).pipe(gulp.dest('dist'))
+            dot: true,
+        }) //
+    .pipe(gulp.dest('dist')) //
     .pipe($.size({
-        title: 'copy'
+        title: 'copy',
     }));
 });
 
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
-    return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({
-        title: 'fonts'
+    return gulp.src(['app/fonts/**']) //
+    .pipe(gulp.dest('dist/fonts')) //
+    .pipe($.size({ //
+        title: 'fonts',
     }));
 });
 
@@ -96,39 +97,38 @@ gulp.task('styles', function () {
     return gulp.src([
         'app/styles/*.scss',
         'app/styles/**/*.css',
-        'app/styles/components/components.scss'
-        ])
+        'app/styles/components/components.scss',
+        ]) //
     .pipe($.changed('styles', {
         extension: '.scss'
-    }))
+    })) //
     .pipe($.rubySass({
         style: 'expanded',
-        precision: 10
-    }))
-    .on('error', console.error.bind(console))
+        precision: 10,
+    })).on('error', console.error.bind(console)) //
     .pipe($.autoprefixer({
-        browsers: AUTOPREFIXER_BROWSERS
-    }))
-    .pipe(gulp.dest('.tmp/styles'))
+        browsers: AUTOPREFIXER_BROWSERS,
+    })) //
+    .pipe(gulp.dest('.tmp/styles')) //
     // Concatenate And Minify Styles
-    .pipe($.iff('*.css', $.csso()))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe($.size({
-        title: 'styles'
+    .pipe($.iff('*.css', $.csso())) //
+    .pipe(gulp.dest('dist/styles')) //
+    .pipe($.size({ //
+        title: 'styles',
     }));
 });
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
     var assets = $.useref.assets({
-        searchPath: '{.tmp,app}'
+        searchPath: '{.tmp,app}',
     });
 
-    return gulp.src('app/**/*.html')
+    return gulp.src('app/**/*.html') //
     .pipe(assets)
     // Concatenate And Minify JavaScript
     .pipe($.iff('*.js', $.uglify({
-        preserveComments: 'some'
+        preserveComments: 'some',
     })))
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
@@ -136,27 +136,24 @@ gulp.task('html', function () {
     .pipe($.iff('*.css', $.uncss({
         html: [
         'app/index.html',
-        'app/styleguide.html'
+        'app/styleguide.html',
         ],
         // CSS Selectors for UnCSS to ignore
-        ignore: [
-        /.navdrawer-container.open/,
-        /.app-bar.open/
-        ]
+        ignore: [ /.navdrawer-container.open/, /.app-bar.open/ ],
     })))
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
-    .pipe($.iff('*.css', $.csso()))
-    .pipe(assets.restore())
-    .pipe($.useref())
+    .pipe($.iff('*.css', $.csso())) //
+    .pipe(assets.restore()) //
+    .pipe($.useref()) //
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
     .pipe($.iff('*.html', $.minifyHtml()))
     // Output Files
-    .pipe(gulp.dest('dist'))
-    .pipe($.size({
-        title: 'html'
+    .pipe(gulp.dest('dist')) //
+    .pipe($.size({ //
+        title: 'html',
     }));
 });
 
@@ -171,7 +168,7 @@ gulp.task('serve', ['styles'], function () {
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: ['.tmp', 'app']
+        server: ['.tmp', 'app'],
     });
 
     gulp.watch(['app/**/*.html'], reload);
@@ -188,7 +185,7 @@ gulp.task('serve:dist', ['default'], function () {
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: 'dist'
+        server: 'dist',
     });
 });
 
@@ -200,12 +197,10 @@ gulp.task('default', ['clean'], function (cb) {
 // Run PageSpeed Insights
 // Update `url` below to the public URL for your site
 gulp.task('pagespeed', pagespeed.bind(null, {
-    // By default, we use the PageSpeed Insights
-    // free (no API key) tier. You can use a Google
-    // Developer API key if you have one. See
-    // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
+    // By default, we use the PageSpeed Insights free (no API key) tier. You can use a Google
+    // Developer API key if you have one. See http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
     url: 'https://example.com',
-    strategy: 'mobile'
+    strategy: 'mobile',
 }));
 
 // Load custom tasks from the `tasks` directory
