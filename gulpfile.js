@@ -57,10 +57,10 @@ gulp.task('jshint', function () {
 // Optimize Images
 gulp.task('images', function () {
     return gulp.src('app/images/**/*') //
-    .pipe($.cache($.imagemin({
-        progressive: true,
-        interlaced: true,
-    }))) //
+    //    .pipe($.cache($.imagemin({
+    //        progressive: true,
+    //        interlaced: true,
+    //    }))) //
     .pipe(gulp.dest('dist/images')) //
     .pipe($.size({ //
         title: 'images',
@@ -149,7 +149,7 @@ gulp.task('html', function () {
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
-    .pipe($.iff('*.html', $.minifyHtml()))
+    //    .pipe($.iff('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist')) //
     .pipe($.size({ //
@@ -206,4 +206,6 @@ gulp.task('pagespeed', pagespeed.bind(null, {
 // Load custom tasks from the `tasks` directory
 try {
     require('require-dir')('tasks');
-} catch (err) {}
+} catch (err) {
+    console.log(err);
+}
