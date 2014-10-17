@@ -1,0 +1,60 @@
+
+.center {
+    text-align: center;
+}
+.orange {
+    color: $orange-dark;
+}
+.outline {
+    border: 1px solid #ccc;
+}
+div.teaser {
+    margin: 1px 1em 0 1em;
+    padding: 1em 1em 1em 1px;
+}
+.wrap {
+    background-color: $haze;
+    margin: auto;
+    position: relative;
+    width: 960px;
+}
+article {
+    font-size: 120%;
+    line-height: 130%;
+
+    #{$texts} {
+        color: #555;
+    }
+}
+nav {
+    a {
+        color: white !important;
+        display: inline-block;
+    }
+}
+section {
+    h1 {
+        color: $wfred;
+        font-size: 300%;
+    }
+    .pic {
+        background-color: #aaa;
+        border: 1px solid gray;
+        display: inline-block;
+        float: left;
+        height: 109px;
+        margin: 2px;
+        width: 109px;
+    }
+    .pics {
+        padding: 0 1rem;
+    }
+    font-size: 120%;
+    padding: 0 1rem;
+}
+#{$texts} {
+    img {
+        margin: 1rem 1rem;
+    }
+    font-weight: normal;
+}

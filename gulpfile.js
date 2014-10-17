@@ -103,8 +103,9 @@ gulp.task('styles', function () {
         extension: '.scss'
     })) //
     .pipe($.rubySass({
-        style: 'expanded',
+        style: 'compact',
         precision: 10,
+        sourcemapPath: '.',
     })).on('error', console.error.bind(console)) //
     .pipe($.autoprefixer({
         browsers: AUTOPREFIXER_BROWSERS,

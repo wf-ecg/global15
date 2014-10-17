@@ -1,0 +1,23 @@
+
+@mixin textPad () {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+$heads: h1, h2, h3, h4, h5, h6;
+$texts: $heads, p, article;
+
+$orange-dark: #cf4b12;
+$orange-light: #e39360;
+$haze5: rgba(255,255,255,0.5);
+$haze9: rgba(255,255,255,0.95);
+$haze: $haze9;
+$wfred: #bb0826;
+
+@import '_h5bp';
+@import '_base';
+@import '_xtra';
+
+/*# sourceMappingURL=g15.css.map */
