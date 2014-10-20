@@ -1,4 +1,8 @@
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 html {
     -webkit-font-smoothing: antialiased;
     font-family: Geneva, sans-serif;
@@ -8,37 +12,28 @@ html {
     line-height: 1.5;
 }
 a {
-    &:hover {
-        border-bottom: 1px solid;
-    }
     border-bottom: 1px solid transparent;
     color: #336699;
     text-decoration: none;
 }
 body {
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
     background-color: #555;
     overflow-y: scroll;
 }
 h1, h2, h3, h4, h5, h6 {
     @include textPad;
-    font-family: Times, serif;
+    font-family: Archer, Times, serif;
 }
 hr {
-    background-color: darkred;
+    background-color: $wfred;
     border: 0;
-    height: 1px;
-    margin: 0.5rem;
-}
-img {
-    vertical-align: middle;
+    height: 2px;
+    margin: 0 2rem;
 }
 p {
     @include textPad;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 nav {
     background-color: $orange-dark;
