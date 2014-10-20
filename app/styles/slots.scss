@@ -1,42 +1,87 @@
-$SlotsSetup: "
-.slot00, .slot11, .slot22, .slot33, .slot44, .slot55,
-.slot01, .slot02, .slot03, .slot04, .slot05,
-.slot12, .slot13, .slot14, .slot15,
-.slot23, .slot24, .slot25,
-.slot34, .slot35,
-.slot45,
-.slot66, .slot77, .slot88, .slot99,
-.slot67, .slot68, .slot69,
-.slot78, .slot79,
-.slot89
-";
-$X: 10px;
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-@import 'slots/_zero';
+$n1o6: '.slot00, .slot11, .slot22, .slot33, .slot44, .slot55          ' ;
+$n1o4: '.slot66, .slot77, .slot88, .slot99                            ' ;
+$n1o3: '.slot01, .slot12, .slot23, .slot34, .slot45                   ' ;
+$half: '.slot02, .slot13, .slot24, .slot35, .slot67, .slot78, .slot89 ' ;
+$n2o3: '.slot03, .slot14, .slot25                                     ' ;
+$n3o4: '.slot68, .slot79                                              ' ;
+$n5o6: '.slot04, .slot15                                              ' ;
+$full: '.slot05, .slot69                                              ' ;
+@mixin SlotsSetup ($W, $M: $W / 50) {
+    #{$n1o6}, #{$n1o4}, #{$n1o3}, #{$half}, #{$n2o3}, #{$n3o4}, #{$n5o6}, #{$full} {
+        display: inline;
+        float: left;
+        margin-left: $M;
+    }
+    .grid { width: $W; }
+    #{$n1o6} { width: 1/6 * ($M + $W) - $M }     /* ^ Sixths */
+    #{$n1o4} { width: 1/4 * ($M + $W) - $M }     /* ^ Quarters */
+    #{$n1o3} { width: 2/6 * ($M + $W) - $M }     /* ^ Thirds */
+    #{$half} { width: 3/6 * ($M + $W) - $M }     /* ^ Halves */
+    #{$n2o3} { width: 4/6 * ($M + $W) - $M }     /* ^ Two-Thirds */
+    #{$n3o4} { width: 3/4 * ($M + $W) - $M }     /* ^ Three-Quarters */
+    #{$n5o6} { width: 5/6 * ($M + $W) - $M }     /* ^ Five-Sixths */
+    #{$full} { width: 6/6 * ($M + $W) - $M }     /* ^ Full-Width */
+}
 .grid {
+    * { box-sizing: border-box; }
     margin: 0 auto;
-    padding: 0 $X;
-}
-@media only screen and (min-width: 720px) {
-    @import 'slots/_small';
-}
-@media only screen and (min-width: 986px) {
-    @import 'slots/_medium';
-}
-@media only screen and (min-width: 1236px) {
-    @import 'slots/_large';
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* etc... */
-body {
-    padding: 0;
+$W: 600px;
+@media only screen and (min-width: $W + 10) {
+    body { font-size: 10px; }
+    @include SlotsSetup($W);
 }
-.example-grids .row p {
-    background: #ffc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    font-family: Menlo, 'Panic Sans', monospace;
-    padding: .2em;
-    margin: .2em;
+$W: 900px;
+@media only screen and (min-width: $W + 10) {
+    body { font-size: 100%; }
+    @include SlotsSetup($W);
+}
+$W: 1200px;
+@media only screen and (min-width: $W + 10) {
+    body { font-size: 20px; }
+    @include SlotsSetup($W);
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Zeroing Out Leftmost Slot Margins */
+.slot00,    .slot01,    .slot02,    .slot03,    .slot04,    .slot05,
+.slot11 .slot11,
+.slot12 .slot11,.slot12 .slot12,
+.slot13 .slot11,.slot13 .slot12,.slot13 .slot13,
+.slot14 .slot11,.slot14 .slot12,.slot14 .slot13,.slot14 .slot14,
+.slot15 .slot11,.slot15 .slot12,.slot15 .slot13,.slot15 .slot14,.slot15 .slot15,
+.slot22 .slot22,
+.slot23 .slot22,.slot23 .slot23,
+.slot24 .slot22,.slot24 .slot23,.slot24 .slot24,
+.slot25 .slot22,.slot25 .slot23,.slot25 .slot24,.slot25 .slot25,
+.slot33 .slot33,
+.slot34 .slot33,.slot34 .slot34,
+.slot35 .slot33,.slot35 .slot34,.slot35 .slot35,
+.slot44 .slot44,
+.slot45 .slot44,.slot45 .slot45,
+.slot55 .slot55,
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.slot66,    .slot67,    .slot68,    .slot69,
+.slot77 .slot77,
+.slot78 .slot77,.slot78 .slot78,
+.slot79 .slot77,.slot79 .slot78,.slot79 .slot79,
+.slot88 .slot88,
+.slot89 .slot88,.slot89 .slot89 {
+    clear: left;
+    margin-left: 0;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.row {
+    clear: left;
+    zoom: 1;
+}
+.row:after { /* Row Clearfix */
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
