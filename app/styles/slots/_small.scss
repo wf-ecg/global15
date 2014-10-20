@@ -1,0 +1,28 @@
+body {
+    font-size: 0.875em;
+}
+.grid {
+    width: 70 * $X;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 6-Col Grid Sizes */
+.slot00,    .slot11,    .slot22,    .slot33,    .slot44,    .slot55             { width:10 * $X; }    /* Sixths */
+.slot01,    .slot12,    .slot23,    .slot34,    .slot45                         { width:22 * $X; }    /* Thirds */
+.slot03,    .slot14,    .slot25                                                 { width:46 * $X; }    /* Two-Thirds */
+.slot04,    .slot15                                                             { width:58 * $X; }    /* Five-Sixths */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 4-Col Grid Sizes */
+.slot66,    .slot77,    .slot88,    .slot99                                     { width:16 * $X; }    /* Quarters */
+.slot68,    .slot79                                                             { width:52 * $X; }    /* Three-Quarters */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 6-Col/4-Col Shared Grid Sizes */
+.slot02,    .slot13,    .slot24,    .slot35,
+.slot67,    .slot78,    .slot89                                                 { width:34 * $X; }    /* Halves */
+.slot05,    .slot69                                                             { width: 100%; }    /* Full-Width */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#{$SlotsSetup} {
+    display: inline;
+    float: left;
+    margin-left: 2 * $X;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

@@ -1,3 +1,16 @@
+$grid: 10, 40, 120, 240;
+
+@each $i in $grid {
+    .ga-#{$i} {
+        width: #{$i}px;
+    }
+}
+// to generate the following output
+.gb-10  { width: 10px; }
+.gb-40  { width: 40px; }
+.gb-120 { width: 120px; }
+.gb-240 { width: 240px; }
+
 
 @mixin textPad () {
     padding-left: 1rem;

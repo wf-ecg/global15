@@ -1,0 +1,22 @@
+body {
+    font-size: 1.125em;
+}
+.grid {
+    width: 120.6 * $X;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 6-Col Grid Sizes */
+.slot00,    .slot11,    .slot22,    .slot33,    .slot44,    .slot55             { width:17.6 * $X; }    /* Sixths */
+.slot01,    .slot12,    .slot23,    .slot34,    .slot45                         { width:38.2 * $X; }    /* Thirds */
+.slot03,    .slot14,    .slot25                                                 { width:79.4 * $X; }    /* Two-Thirds */
+.slot04,    .slot15                                                             { width:100  * $X;}    /* Five-Sixths */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 4-Col Grid Sizes */
+.slot66,    .slot77,    .slot88,    .slot99                                     { width:27.9 * $X; }    /* Quarters */
+.slot68,    .slot79                                                             { width:89.7 * $X; }    /* Three-Quarters */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* 6-Col/4-Col Shared Grid Sizes */
+.slot02,    .slot13,    .slot24,    .slot35,
+.slot67,    .slot78,    .slot89                                                 { width:58.8 * $X; }    /* Halves */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

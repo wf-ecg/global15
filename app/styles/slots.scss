@@ -1,0 +1,42 @@
+$SlotsSetup: "
+.slot00, .slot11, .slot22, .slot33, .slot44, .slot55,
+.slot01, .slot02, .slot03, .slot04, .slot05,
+.slot12, .slot13, .slot14, .slot15,
+.slot23, .slot24, .slot25,
+.slot34, .slot35,
+.slot45,
+.slot66, .slot77, .slot88, .slot99,
+.slot67, .slot68, .slot69,
+.slot78, .slot79,
+.slot89
+";
+$X: 10px;
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@import 'slots/_zero';
+.grid {
+    margin: 0 auto;
+    padding: 0 $X;
+}
+@media only screen and (min-width: 720px) {
+    @import 'slots/_small';
+}
+@media only screen and (min-width: 986px) {
+    @import 'slots/_medium';
+}
+@media only screen and (min-width: 1236px) {
+    @import 'slots/_large';
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* etc... */
+body {
+    padding: 0;
+}
+.example-grids .row p {
+    background: #ffc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-family: Menlo, 'Panic Sans', monospace;
+    padding: .2em;
+    margin: .2em;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
