@@ -29,11 +29,11 @@ article {
 }
 nav {
     a {
-        color: white !important;
-        display: inline-block;
         &:hover {
             border-bottom: 1px solid;
         }
+        color: white !important;
+        display: inline-block;
     }
 }
 section {
@@ -61,4 +61,43 @@ section {
     img {
         margin: 1rem 2rem;
     }
+}
+
+
+
+
+#wrap {
+    margin: 50px 1rem 1rem;
+    position: relative;
+}
+dl {
+    border: 1px solid gray;
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+}
+dt {
+    &:active {
+        background-color: white;
+    }
+    border: 1px solid gray;
+    border-bottom: 0;
+    height: 30px;
+    padding: 0.666rem 2rem;
+    position: absolute;
+    top: -29px;
+    width: 101px;
+}
+dd {
+    height: 111%;
+    padding: 0.5rem 1rem;
+}
+#tb1 {
+    left: 0;
+}
+#tb2 {
+    left: 100px;
+}
+#tb3 {
+    left: 200px;
 }
