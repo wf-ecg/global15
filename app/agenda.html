@@ -16,7 +16,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
         <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-precomposed.png">
-        <script src="//localhost:8000/lib/jquery/1.8.2/jquery.js"></script>
 
         <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
         <!--
@@ -26,6 +25,7 @@
         <link rel="stylesheet" href="styles/g15.css">
 
         <!-- build:js scripts/example.js -->
+        <script src="//localhost:8000/lib/jquery/1.8.2/jquery.js"></script>
         <script src="scripts/example-1.js"></script>
         <script src="scripts/example-2.js"></script>
         <!-- endbuild -->
@@ -462,69 +462,7 @@
                                 </dd>
                             </dl>
                         </div>
-                        <script>
-                            var Tabs = function (sel) {
-                                try {
-                                    var I = this;
-                                    I.ele = $(sel);
-                                    I._init(this);
-                                } catch (err) {return err}
-                            };
-                            Tabs.prototype = {
-                                _init: function (I) {
-                                    I.num = null;
-                                    I.list = $();
-                                    I.ele.find('dt').each(function (i, e) {
-                                        var set = $(e).next().andSelf();
-                                        I.list.push(set);
-                                        set.data('tabnum', i + 1);
-                                        $(e).next().appendTo($(e).parent())
-                                    });
-                                    I.all = $(I.list).map(function () {
-                                        return this.toArray();
-                                    });
-                                    I._setHandle(I);
-                                },
-                                setStatus: function (n, stat) {
-                                    var I = this,
-                                    e;
-
-                                    e = I.list[n - 1];
-
-                                    if (e) {
-                                        if (stat) {
-                                            I.num && I.setInactive(I.num);
-                                            e.addClass('active');
-                                            I.num = n;
-                                        } else {
-                                            e.removeClass('active');
-                                        }
-                                    } else {
-                                        console.warn('no can do:', n, stat);
-                                    }
-                                },
-                                setActive: function (num) {
-                                    return this.setStatus(num, true);
-                                },
-                                setInactive: function (num) {
-                                    return this.setStatus(num, false);
-                                },
-                                getActive: function () {
-                                    return this.num;
-                                },
-                                _setHandle: function (I) {
-                                    I.ele.on('click', 'dt', function (evt) {
-                                        var tab = $(evt.currentTarget);
-                                        I.setActive(tab.data('tabnum'));
-                                        // evt.target           Touched             a
-                                        // evt.currentTarget    Touched/Watched     dt
-                                        // evt.delegateTarget   Watcher             div
-                                    });
-                                },
-                            };
-                            x = new Tabs('.tabs'); x.setActive(1)
-                        </script>
-
+                        <script> initTabs(); </script>
                         <!--  -->
                     </section>
                 </td>
