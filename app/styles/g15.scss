@@ -1,3 +1,8 @@
+@import "compass/css3";
+
+@mixin vgrad($clr1: white, $clr2: black, $per1: 1%, $per2: 77% ){
+    @include background-image( linear-gradient(top, $clr1 $per1, $clr2 $per2) );
+}
 @mixin textPad () {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -15,6 +20,7 @@ $wfred: #bb0826;
 
 @import '_h5bp';
 @import '_base';
+@import '_cals';
 @import '_tabs';
 @import '_xtra';
 @import '_slot';

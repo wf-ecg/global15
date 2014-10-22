@@ -105,6 +105,7 @@ gulp.task('styles', function () {
     .pipe($.rubySass({
         style: 'compact',
         precision: 10,
+        compass: true,
         sourcemapPath: '.',
     })).on('error', console.error.bind(console)) //
     .pipe($.autoprefixer({
