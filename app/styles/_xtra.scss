@@ -34,6 +34,7 @@ nav {
     a {
         &:hover {
             border-bottom: 1px solid;
+            opacity: 0.8;
         }
         color: white !important;
         display: inline-block;
