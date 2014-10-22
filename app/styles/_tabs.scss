@@ -6,8 +6,8 @@ div.tabs {
 
     dl {
         background-color: white;
-        height: 22em;
-        width: 55em;
+        height: 33em;
+        width: 100%;
     }
     dt {
         border: 1px solid gray;
@@ -27,13 +27,13 @@ div.tabs {
         overflow: auto;
         padding: 1em;
         width: 100%;
+        &.active {
+            border: 1px solid gray;
+            display: block;
+        }
     }
     dt.active, dt:active {
         background-color: white;
         border-bottom: 0;
-    }
-    dd.active {
-        border: 1px solid gray;
-        display: block;
     }
 }
