@@ -1,0 +1,34 @@
+
+.pic {
+    border: 1px solid gray;
+    display: inline-block;
+    float: left;
+    font-size: 9px;
+    height: 109px;
+    margin: 2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    width: 109px;
+
+    img {
+        margin: 0;
+        width: 100%;
+    }
+    &:empty {
+        background-color: #aaa;
+    }
+    p {
+        display: none;
+    }
+    &:not(:empty):hover {
+        height: auto;
+        width: 100%;
+        p {
+            display: block;
+        }
+    }
+}
+.pics {
+    padding: 0 1rem;
+}
