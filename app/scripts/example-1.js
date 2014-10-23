@@ -78,4 +78,17 @@ function initTabs() {
     X.setActive(1);
 }
 
+
+function initVids() {
+    'use strict';
+
+    var ele = $('.vids');
+
+    ele.one('click', '.crop', function () {
+        window.alert('play');
+    });
+}
+
 initTabs.z = 9;
+initVids.z = 9;
+
