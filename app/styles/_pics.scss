@@ -1,10 +1,10 @@
 $unit: 110px;
 
-@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2) {
+@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0.5s) {
     $h: $fact * $unit;
     $w: $fact * $unit;
 
-    &, * {@include transition( all 0.5s ease-in 0.5s);}
+    &, * {@include transition( all 0.5s ease-in $hold);}
     border: $fact * 1px solid #ccc;
     height: $h;
     margin: (($w * $ratio - $unit) / -2) + 2px;
@@ -38,7 +38,17 @@ $unit: 110px;
         }
     }
     .pic:hover {
-        @include sizer(2, $unit);
+        @include sizer(2, $unit, 1.2);
+        img {
+            margin-top: -5%;
+        }
+        p {
+            display: block;
+        }
+
+    }
+    .pic.active {
+        @include sizer(5, $unit, 1.2, 0s);
         img {
             margin-top: 0%;
             width: 120%;
@@ -47,14 +57,6 @@ $unit: 110px;
             display: block;
             max-height: $unit;
         }
-    }
-    .pic:active {
-        @include sizer(5, $unit);
-        img {
-            margin-top: -5%;
-        }
-        p {
-            max-height: 0;
-        }
+
     }
 }

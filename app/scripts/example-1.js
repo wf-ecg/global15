@@ -79,6 +79,56 @@ function initTabs() {
 }
 
 
+function initPics() {
+    'use strict';
+    var ele = $('.pics');
+    var act;
+
+    function isActive(ele) {
+        return $(ele).is('.active')
+    }
+    function slide() {
+        var hold = act[0].offsetParent;
+
+        var holdSize = {
+            width: hold.offsetWidth,
+            height: hold.offsetHeight,
+        };
+
+        var left = act[0].offsetLeft;
+        var bott = act[0].offsetHeight + act[0].offsetTop - holdSize.height;
+        var reft = holdSize.width - (act[0].offsetWidth + act[0].offsetLeft);
+
+        if (isActive(act)) {
+            // check if spanning past bottom, left, or right
+            bott = bott > 0 ? bott : 0;
+            left = left < 0 ? left * -1 : 0;
+            reft = reft < 0 ? reft : 0;
+
+            act.css({
+                left: left || reft,
+                bottom: bott,
+            });
+        }
+    }
+    function toggle(evt) {
+        var me = $(evt.currentTarget);
+
+        me.css({
+            left: 0,
+            bottom: 0,
+        });
+        if (isActive(me)) {
+            me.removeClass('active');
+        } else {
+            act = me;
+            me.addClass('active');
+            me.one('transitionend', slide);
+        }
+    }
+    ele.on('click', '.pic', toggle);
+}
+
 function initVids() {
     'use strict';
 
@@ -90,5 +140,6 @@ function initVids() {
 }
 
 initTabs.z = 9;
+initPics.z = 9;
 initVids.z = 9;
 
