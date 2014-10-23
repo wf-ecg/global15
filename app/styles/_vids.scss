@@ -1,34 +1,35 @@
 
+.vids {
+    padding: 0 0;
+}
 .vid {
-    border: 1px solid gray;
+    background-color: #eee;
+    border: 1px solid #ccc;
     display: inline-block;
     float: left;
     font-size: 9px;
-    height: 109px;
+    height: 220px;
     margin: 2px;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align: center;
-    width: 109px;
+    width: 24.5%;
 
     img {
-        margin: 0;
-        width: 100%;
+        bottom: 0;
+        margin: -5%;
+        position: absolute;
+        width: 110%;
+    }
+    .crop {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        height: 116px;
+        margin: 10px;
+        overflow: hidden;
+        position: relative;
+        width: 192px;
     }
     &:empty {
-        background-color: #aaa;
+        //display: none;
     }
-    p {
-        display: none;
-    }
-    &:not(:empty):hover {
-        height: auto;
-        width: 100%;
-        p {
-            display: block;
-        }
-    }
-}
-.vids {
-    padding: 0 1rem;
 }
