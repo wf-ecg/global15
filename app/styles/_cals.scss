@@ -3,16 +3,19 @@
     background-color: #ccc;
     border-collapse: separate;
     border-spacing: 0 1px;
+    font: normal 12px/1.2 ArialNarrow, sans-serif;
 
+    td {
+    }
     th {
         text-align: center;
         white-space: nowrap;
     }
     td, th {
         background-color: #fff;
-        max-width: 20em;
-        padding: 3px 9px;
-        vertical-align: middle;
+        max-width: 30em;
+        padding: 9px 9px 3px 9px;
+        vertical-align: top;
     }
     td.td4 {
         background-color: #d9d9d9;

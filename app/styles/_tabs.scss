@@ -1,6 +1,5 @@
 
 div.tabs {
-    font: normal 12px/2 sans-serif ;
     margin: 50px 1em 1em;
     position: relative;
 
@@ -10,15 +9,17 @@ div.tabs {
         width: 100%;
     }
     dt {
-        @include vgrad(#eee, #ccc);
+        @include vgrad(#fff, #aaa);
         border: 1px solid gray;
         border-radius: 4px 4px 0 0 ;
         cursor: pointer;
         float: left;
+        text-shadow: 0 0 4px white;
         height: 3em;
         line-height: 3;
         margin: -2.8em -1px -1px 0;
         padding: 0 1em;
+
         &:hover {
             opacity: 0.8;
         }
@@ -30,6 +31,7 @@ div.tabs {
         overflow: auto;
         padding: 1em;
         width: 100%;
+
         &.active {
             border: 1px solid gray;
             display: block;
