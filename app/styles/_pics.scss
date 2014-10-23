@@ -1,34 +1,60 @@
+$unit: 110px;
 
-.pic {
-    border: 1px solid gray;
-    display: inline-block;
-    float: left;
-    font-size: 9px;
-    height: 109px;
-    margin: 2px;
-    overflow-x: hidden;
-    overflow-y: auto;
+@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2) {
+    $h: $fact * $unit;
+    $w: $fact * $unit;
+
+    &, * {@include transition( all 0.5s ease-in 0.5s);}
+    border: $fact * 1px solid #ccc;
+    height: $h;
+    margin: (($w * $ratio - $unit) / -2) + 2px;
+    width: $w * $ratio;
+    z-index: $fact;
+}
+
+.pics {
+    @include defani;
+    font-size: 10px;
+    padding: 0 1rem;
     text-align: center;
-    width: 109px;
 
-    img {
-        margin: 0;
-        width: 100%;
-    }
-    &:empty {
-        background-color: #aaa;
-    }
-    p {
-        display: none;
-    }
-    &:not(:empty):hover {
-        height: auto;
-        width: 100%;
+    .pic {
+        @include sizer(1, $unit, 1);
+        background-color: white;
+        cursor: pointer;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        &:empty {
+            background-color: #ddd;
+        }
+        img {
+            margin: -5% -15%;
+            width: 140%;
+        }
         p {
-            display: block;
+            display: none;
         }
     }
-}
-.pics {
-    padding: 0 1rem;
+    .pic:hover {
+        @include sizer(2, $unit);
+        img {
+            margin-top: 0%;
+            width: 120%;
+        }
+        p {
+            display: block;
+            max-height: $unit;
+        }
+    }
+    .pic:active {
+        @include sizer(5, $unit);
+        img {
+            margin-top: -5%;
+        }
+        p {
+            max-height: 0;
+        }
+    }
 }

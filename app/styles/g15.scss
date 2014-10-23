@@ -3,9 +3,15 @@
 @mixin vgrad($clr1: white, $clr2: black, $per1: 1%, $per2: 77% ){
     @include background-image( linear-gradient(top, $clr1 $per1, $clr2 $per2) );
 }
-@mixin textPad () {
+@mixin textPad {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+@mixin defani {
+    @include backface-visibility( hidden );
+    @include perspective( 1000 );
+    @include transform( rotate(0) scale(1) translate(0, 0) translateZ(0) );
+    @include transform-style( preserve-3d );
 }
 
 $heads: h1, h2, h3, h4, h5, h6;
