@@ -1,30 +1,37 @@
-var x = 1;
-x++;
+/*jslint white:false */
+/*globals $, initTabs:true */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+var X;
 
 function initTabs() {
+    'use strict';
+
     var Tabs = function (sel) {
         try {
             var I = this;
             I.ele = $(sel);
             I._init(this);
         } catch (err) {
-            return err
+            console.warn(err);
         }
     };
+
     Tabs.prototype = {
         _init: function (I) {
             I.num = null;
             I.list = $();
             I.ele.find('dt').each(function (i, e) {
                 var set = $(e).next().andSelf();
+
                 I.list.push(set);
-                set.data('tabnum', i + 1);
-                $(e).next().appendTo($(e).parent())
+                set.data('tabnum', i + 1); //           pair and mark
+
+                $(e).next().appendTo($(e).parent()); // reattach at the end
             });
+            I._setHandle();
             I.all = $(I.list).map(function () {
                 return this.toArray();
             });
-            I._setHandle(I);
         },
         setStatus: function (n, stat) {
             var I = this,
@@ -34,14 +41,16 @@ function initTabs() {
 
             if (e) {
                 if (stat) {
-                    I.num && I.setInactive(I.num);
+                    if (I.num) {
+                        I.setInactive(I.num);
+                    }
                     e.addClass('active');
                     I.num = n;
                 } else {
                     e.removeClass('active');
                 }
             } else {
-                console.warn('no can do:', n, stat);
+                window.console.warn('no can do:', n, stat);
             }
         },
         setActive: function (num) {
@@ -53,7 +62,8 @@ function initTabs() {
         getActive: function () {
             return this.num;
         },
-        _setHandle: function (I) {
+        _setHandle: function () {
+            var I = this;
             I.ele.on('click', 'dt', function (evt) {
                 var tab = $(evt.currentTarget);
                 I.setActive(tab.data('tabnum'));
@@ -64,6 +74,8 @@ function initTabs() {
         },
     };
 
-    x = new Tabs('.tabs');
-    x.setActive(1);
+    X = new Tabs('.tabs');
+    X.setActive(1);
 }
+
+initTabs.z = 9;
