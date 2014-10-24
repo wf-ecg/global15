@@ -85,7 +85,7 @@ function initPics() {
     var act;
 
     function isActive(ele) {
-        return $(ele).is('.active')
+        return $(ele).is('.active');
     }
     function slide() {
         var hold = act[0].offsetParent;

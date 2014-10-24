@@ -4,16 +4,14 @@ module.exports = {
     // https://github.com/gruntjs/grunt-contrib-concat
 
     options: {
-        banner: ';\n'
-        + '/* = = = = = = = '
+        banner: '/* = = = = = = = '
         + '<%= pkg.name %> '
         + '<%= grunt.task.current.name %> '
-        + '= = = = = = = = */\n',
-        separator: ';\n'
-        + '/* = = = = = = = '
+        + '= = = = = = = = */\n\n',
+        separator: '/* = = = = = = = '
         + '<%= grunt.task.current.target %> '
         + '<%= grunt.template.today("isoDateTime") %> '
-        + '= = = = = = = = */\n',
+        + '= = = = = = = = */\n\n',
         sourceMap: true,
     },
     bootstrap: {
