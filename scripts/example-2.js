@@ -26,7 +26,7 @@ $(function () {
             captionOpacity: 0.8,
             prevText: '«',
             nextText: '»',
-            randomStart: false,
+            randomStart: true,
             z: 0
         });
     }
