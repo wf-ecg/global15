@@ -10,17 +10,17 @@ function initPics() {
         return $(ele).is('.active');
     }
     function slide(evt) {
-        var me = $(evt.currentTarget);
-        var hold = me[0].offsetParent;
+        var me, hold, holdSize, left, bott, reft;
 
-        var holdSize = {
+        me = $(evt.currentTarget);
+        hold = me[0].offsetParent;
+        holdSize = {
             width: hold.offsetWidth,
             height: hold.offsetHeight,
         };
-
-        var left = me[0].offsetLeft;
-        var bott = me[0].offsetHeight + me[0].offsetTop - holdSize.height;
-        var reft = holdSize.width - (me[0].offsetWidth + me[0].offsetLeft);
+        left = me[0].offsetLeft;
+        bott = me[0].offsetHeight + me[0].offsetTop - holdSize.height;
+        reft = holdSize.width - (me[0].offsetWidth + me[0].offsetLeft);
 
         if (isActive(me)) {
             // check if spanning past bottom, left, or right
