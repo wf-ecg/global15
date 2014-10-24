@@ -62,7 +62,7 @@ $unit: 110px;
     }
     .pic.active {
         @include framer(25, 4);
-        @include sizer(5, $unit, 1.2, 0s);
+        @include sizer(5, $unit, 1.3, 0s);
 
         img {
             margin: -5% -10%;
