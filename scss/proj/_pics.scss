@@ -4,6 +4,7 @@ $unit: 110px;
     $x: $depth * 2.75px;
     $y: $depth * 5.50px;
     $z: $depth * 8.25px;
+
     border: ($size * 1px) solid transparent !important;
     border-image: url(../images/border.png) $size round !important;
     box-shadow: $x $y $z rgba(0, 0, 0, 0.11 * $depth);
@@ -12,11 +13,13 @@ $unit: 110px;
 @mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0.5s) {
     $h: $fact * $unit;
     $w: $fact * $unit;
+    $x: (($w * $ratio - $unit) / -2) + 1px;
+    $y: (($w - $unit) / -2) + 1px;
 
     &, * {@include transition( all 0.5s ease-in $hold);}
     border: $fact * 1px solid #ccc;
     height: $h;
-    margin: (($w * $ratio - $unit) / -2) + 2px;
+    margin: $y $x;
     width: $w * $ratio;
     z-index: $fact;
 }
@@ -28,7 +31,7 @@ $unit: 110px;
     text-align: center;
 
     .pic {
-        @include framer(1, 1);
+        @include framer(0, 0);
         @include sizer(1, $unit, 1);
         background-color: white;
         cursor: pointer;
@@ -45,20 +48,25 @@ $unit: 110px;
             width: 140%;
         }
         p {
-            display: none;
-            margin-top: 0.5rem;
+            overflow: hidden;
+            position: absolute;
+            max-height: 0px;
         }
     }
     .pic:hover {
-        @include sizer(3, $unit, 1.1);
-
+        @include framer(1, 1);
+        @include sizer(2, $unit, 1.1);
         img {
             margin-top: 0%;
         }
         p {
+            background-color: $haze8;
+            color: black;
             display: block;
+            margin: 0;
+            max-height: $unit;
+            padding: 0.5rem;
         }
-
     }
     .pic.active {
         @include framer(25, 4);
@@ -67,10 +75,6 @@ $unit: 110px;
         img {
             margin: -5% -10%;
             width: 120%;
-        }
-        p {
-            display: none;
-            max-height: $unit;
         }
     }
 }

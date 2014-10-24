@@ -121,6 +121,7 @@ function initPics() {
         if (isActive(me)) {
             me.removeClass('active');
         } else {
+            me.siblings().removeClass('active');
             me.addClass('active');
             me.one('transitionend', slide);
         }
