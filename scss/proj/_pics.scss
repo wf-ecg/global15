@@ -13,7 +13,7 @@ $unit: 110px;
     box-shadow: $x $y $z rgba(0, 0, 0, 0.11 * $depth);
 }
 
-@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0.5s) {
+@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0s) {
     $h: $fact * $unit;
     $w: $fact * $unit;
     $x: (($w * $ratio - $unit) / -2) + 1px;
@@ -24,7 +24,7 @@ $unit: 110px;
     height: $h;
     margin: $y $x;
     width: $w * $ratio;
-    z-index: $fact;
+    z-index: $fact * 10;
 }
 
 .pics {
@@ -58,7 +58,7 @@ $unit: 110px;
     }
     .pic:hover {
         @include framer(1, 1);
-        @include sizer(2, $unit, 1.1);
+        @include sizer(1.1, $unit, 1.1);
         img {
             margin-top: 0%;
         }
