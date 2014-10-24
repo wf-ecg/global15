@@ -28,6 +28,7 @@ $unit: 110px;
     text-align: center;
 
     .pic {
+        @include framer(1, 1);
         @include sizer(1, $unit, 1);
         background-color: white;
         cursor: pointer;
@@ -45,11 +46,10 @@ $unit: 110px;
         }
         p {
             display: none;
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
         }
     }
     .pic:hover {
-        @include framer(10, 1);
         @include sizer(3, $unit, 1.1);
 
         img {
