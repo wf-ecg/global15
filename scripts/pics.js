@@ -5,6 +5,7 @@
 function initPics() {
     'use strict';
     var ele = $('.pics');
+    var ME;
 
     function isActive(ele) {
         return $(ele).is('.active');
@@ -34,22 +35,29 @@ function initPics() {
             });
         }
     }
-    function toggle(evt) {
-        var me = $(evt.currentTarget);
-
-        me.css({
+    function unzoom() {
+        ME.removeClass('active');
+        ME.css({
             left: 0,
             bottom: 0,
         });
-        if (isActive(me)) {
-            me.removeClass('active');
-        } else {
-            me.siblings().removeClass('active');
+        ME.one('transitionend', reset);
+    }
+    function zoom(evt) {
+        var me = $(evt.currentTarget);
+
+        if (!isActive(me)) {
+            ME = me;
             me.addClass('active');
             me.one('transitionend', slide);
+            $('body').one('mousedown', unzoom);
         }
     }
-    ele.on('click', '.pic', toggle);
+    function reset() {
+        C.warn('reset zoom');
+        ele.one('click', '.pic', zoom);
+    }
+    reset();
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

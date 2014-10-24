@@ -13,13 +13,13 @@ $unit: 110px;
     box-shadow: $x $y $z rgba(0, 0, 0, 0.11 * $depth);
 }
 
-@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0s) {
+@mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2) {
     $h: $fact * $unit;
     $w: $fact * $unit;
     $x: (($w * $ratio - $unit) / -2) + 1px;
     $y: (($w - $unit) / -2) + 1px;
 
-    &, * {@include transition( all 0.5s ease-in $hold);}
+    &, * {@include transition( all 0.5s ease-in);}
     border: $fact * 1px solid #ccc;
     height: $h;
     margin: $y $x;
@@ -39,6 +39,8 @@ $unit: 110px;
         background-color: white;
         cursor: pointer;
         float: left;
+        left: 0;
+        bottom: 0;
         overflow: hidden;
         position: relative;
         z-index: 1;
@@ -67,17 +69,21 @@ $unit: 110px;
             color: black;
             display: block;
             margin: 0;
-            max-height: $unit;
+            max-height: $unit * 2;
             padding: 0.5rem;
         }
     }
     .pic.active {
         @include framer(25, 4);
-        @include sizer(5, $unit, 1.3, 0s);
+        @include sizer(5, $unit, 1.3);
 
         img {
             margin: -5% -10%;
             width: 120%;
+        }
+        p {
+            background-color: $shad6;
+            color: white;
         }
     }
 }
