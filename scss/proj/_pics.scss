@@ -1,5 +1,14 @@
 $unit: 110px;
 
+@mixin framer($size: 25, $depth: 4) {
+    $x: $depth * 2.75px;
+    $y: $depth * 5.50px;
+    $z: $depth * 8.25px;
+    border: ($size * 1px) solid transparent !important;
+    border-image: url(../images/border.png) $size round !important;
+    box-shadow: $x $y $z rgba(0, 0, 0, 0.11 * $depth);
+}
+
 @mixin sizer($fact: 1, $unit: 100px, $ratio: 1.2, $hold: 0.5s) {
     $h: $fact * $unit;
     $w: $fact * $unit;
@@ -26,6 +35,7 @@ $unit: 110px;
         overflow: hidden;
         position: relative;
         z-index: 1;
+
         &:empty {
             background-color: #ddd;
         }
@@ -35,12 +45,15 @@ $unit: 110px;
         }
         p {
             display: none;
+            margin-top: 0.25rem;
         }
     }
     .pic:hover {
-        @include sizer(2, $unit, 1.2);
+        @include framer(10, 1);
+        @include sizer(3, $unit, 1.1);
+
         img {
-            margin-top: -5%;
+            margin-top: 0%;
         }
         p {
             display: block;
@@ -48,15 +61,16 @@ $unit: 110px;
 
     }
     .pic.active {
+        @include framer(25, 4);
         @include sizer(5, $unit, 1.2, 0s);
+
         img {
-            margin-top: 0%;
+            margin: -5% -10%;
             width: 120%;
         }
         p {
-            display: block;
+            display: none;
             max-height: $unit;
         }
-
     }
 }

@@ -82,30 +82,30 @@ function initTabs() {
 function initPics() {
     'use strict';
     var ele = $('.pics');
-    var act;
 
     function isActive(ele) {
         return $(ele).is('.active');
     }
-    function slide() {
-        var hold = act[0].offsetParent;
+    function slide(evt) {
+        var me = $(evt.currentTarget);
+        var hold = me[0].offsetParent;
 
         var holdSize = {
             width: hold.offsetWidth,
             height: hold.offsetHeight,
         };
 
-        var left = act[0].offsetLeft;
-        var bott = act[0].offsetHeight + act[0].offsetTop - holdSize.height;
-        var reft = holdSize.width - (act[0].offsetWidth + act[0].offsetLeft);
+        var left = me[0].offsetLeft;
+        var bott = me[0].offsetHeight + me[0].offsetTop - holdSize.height;
+        var reft = holdSize.width - (me[0].offsetWidth + me[0].offsetLeft);
 
-        if (isActive(act)) {
+        if (isActive(me)) {
             // check if spanning past bottom, left, or right
             bott = bott > 0 ? bott : 0;
             left = left < 0 ? left * -1 : 0;
             reft = reft < 0 ? reft : 0;
 
-            act.css({
+            me.css({
                 left: left || reft,
                 bottom: bott,
             });
@@ -121,7 +121,6 @@ function initPics() {
         if (isActive(me)) {
             me.removeClass('active');
         } else {
-            act = me;
             me.addClass('active');
             me.one('transitionend', slide);
         }
