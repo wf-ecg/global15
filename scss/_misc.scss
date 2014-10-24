@@ -5,7 +5,7 @@ body {/* test */
 /*     border: 1em solid lime;*/
 }
 #slider {
-    &, * {@include transition( all 0.5s ease-in 0);}
+    //&, * {@include transition( all 0.5s ease-in 0);}
     height: 348px;
     overflow: hidden;
 }

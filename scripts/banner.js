@@ -1,6 +1,7 @@
 /*jslint white:false */
 /*globals $, initTabs:true */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 $(function () {
     var banner = $('#slider');
 
