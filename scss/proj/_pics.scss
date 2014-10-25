@@ -8,8 +8,8 @@ $unit: 110px;
     $y: $depth * 5.50px;
     $z: $depth * 8.25px;
 
-    border: ($size * 1px) solid transparent !important;
-    border-image: url(../images/border.png) $size round !important;
+    border: ($size * 1px) solid transparent;
+    border-image: url(../images/border.png) $size round;
     box-shadow: $x $y $z rgba(0, 0, 0, 0.11 * $depth);
 }
 
@@ -20,7 +20,6 @@ $unit: 110px;
     $y: (($w - $unit) / -2) + 1px;
 
     &, * {@include transition( all 0.5s ease-in);}
-    border: $fact * 1px solid #ccc;
     height: $h;
     margin: $y $x;
     width: $w * $ratio;
@@ -36,7 +35,7 @@ $unit: 110px;
     .pic {
         @include framer(0, 0);
         @include sizer(1, $unit, 1);
-        background-color: white;
+        background-color: #ddd;
         cursor: pointer;
         float: left;
         left: 0;
@@ -45,9 +44,6 @@ $unit: 110px;
         position: relative;
         z-index: 1;
 
-        &:empty {
-            background-color: #ddd;
-        }
         img {
             margin: -5% -15%;
             width: 140%;

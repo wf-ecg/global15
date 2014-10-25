@@ -6,6 +6,7 @@ function initPics() {
     'use strict';
     var ele = $('.pics');
     var ME;
+    var crap = !$('html').is('.csstransitions');
 
     function isActive(ele) {
         return $(ele).is('.active');
@@ -41,7 +42,11 @@ function initPics() {
             left: 0,
             bottom: 0,
         });
-        ME.one('transitionend', reset);
+        if (!crap) {
+            ME.one('transitionend', reset);
+        } else {
+            _.delay(reset, 999);
+        }
     }
     function zoom(evt) {
         var me = $(evt.currentTarget);
@@ -49,7 +54,15 @@ function initPics() {
         if (!isActive(me)) {
             ME = me;
             me.addClass('active');
-            me.one('transitionend', slide);
+            if (!crap) {
+                me.one('transitionend', slide);
+            } else {
+                _.delay(function () {
+                    slide({
+                        currentTarget: me,
+                    });
+                }, 999);
+            }
             $('body').one('mousedown', unzoom);
         }
     }
