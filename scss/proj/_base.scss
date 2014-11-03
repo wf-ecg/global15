@@ -12,7 +12,7 @@ html {
     font-size: 10px;
     font-smoothing: antialiased;
     height: 100%;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 a {
     border-bottom: 1px solid transparent;
@@ -20,24 +20,45 @@ a {
     cursor: pointer;
     text-decoration: none;
 }
+a:hover {
+    text-decoration:underline;
+}
 body {
     background-color: #555;
     overflow-y: scroll;
 }
 h1, h2, h3, h4, h5, h6 {
     @include textPad;
-    font-family: Archer, Times, serif;
+    font-family: Archer, 'Archer SSm A', 'Archer SSm B', Georgia, serif;
+}
+h1 {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+article h2 {
+    padding-top: 1em;
 }
 hr {
     background-color: $wfred;
     border: 0;
     height: 2px;
-    margin: 0 2rem;
+    margin: 0 2em 0 1em
 }
-p {
-    @include textPad;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+p, article ul {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+article {
+    li {
+        color: #000;
+        margin-left: 2em;
+    }
+    ul {
+        list-style-type: square;
+        margin-left: 1em;
+    }
 }
 nav {
     background-color: $orange-dark;

@@ -15,8 +15,8 @@
     columns: 2;
 }
 .teaser {
-    margin: 1px 1rem 1rem 1rem;
-    padding: 1rem 1rem 1rem 1px;
+    margin: 1px 1em 1em 0;
+    padding: 1em 1em 1em 1px;
 }
 .wrap {
     background-color: white;
@@ -24,12 +24,15 @@
     position: relative;
     width: 960px;
 }
+.warning {
+    font-weight: bold;
+    color: #bb0826;
+}
 article {
-    font-size: 120%;
-    line-height: 130%;
+    font-size: 100%;
 
     #{$texts} {
-        color: #555;
+        color: #000;
     }
 }
 nav {
@@ -37,6 +40,7 @@ nav {
         &:hover {
 /*            border-bottom: 1px solid;*/
             opacity: 0.8;
+            text-decoration:none;
         }
         color: white !important;
         display: inline-block;
@@ -45,15 +49,14 @@ nav {
 section {
     h1 {
         color: $wfred;
-        font-size: 300%;
-        font-weight: normal;
+        font-size: 250%;
     }
     font-size: 120%;
-    padding: 0 1rem;
+    padding: 0 1em;
 }
 #{$texts} {
     img {
-        margin: 1rem 2rem;
+        margin: 1em 2em;
     }
 }
 // - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - //

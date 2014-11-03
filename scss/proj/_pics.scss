@@ -29,7 +29,7 @@ $unit: 110px;
 .pics {
     @include defani;
     font-size: 10px;
-    padding: 0 1rem;
+    padding: 0 1em;
     text-align: center;
 
     .pic {
@@ -61,12 +61,13 @@ $unit: 110px;
             margin-top: 0%;
         }
         p {
+            background-color: white;
             background-color: $haze8;
             color: black;
             display: block;
             margin: 0;
             max-height: $unit * 2;
-            padding: 0.5rem;
+            padding: 0.5em;
         }
     }
     .pic.active {
@@ -78,6 +79,7 @@ $unit: 110px;
             width: 120%;
         }
         p {
+            background-color: black;
             background-color: $shad6;
             color: white;
         }

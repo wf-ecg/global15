@@ -2,11 +2,26 @@
 /* Misc */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 body {/* test */
-/*     border: 1em solid lime;*/
+    /*     border: 1em solid lime;*/
 }
 #slider {
     //&, * {@include transition( all 0.5s ease-in 0);}
     height: 348px;
     overflow: hidden;
+}
+
+.gallery-image {
+    border-radius: 0px;
+    width: 12em;
+}
+.gallery-image-link {
+    @include transition( background-color 0.1s ease-out);
+    background-color: #fff;
+    border-radius: 0px;
+    display: inline-block;
+    line-height: 0;
+}
+.gallery-image-link:hover {
+    background-color: #cccccc;
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

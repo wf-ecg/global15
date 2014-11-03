@@ -7,8 +7,8 @@
     @include background-image( linear-gradient(top, $clr1 $per1, $clr2 $per2) );
 }
 @mixin textPad {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 @mixin defani {
     @include backface-visibility( hidden );
@@ -33,7 +33,6 @@ $wfred: #bb0826;
 /*@import '_slot';*/
 @import '_base';
 @import '_cals';
-@import '_pics';
 @import '_tabs';
 @import '_vids';
 @import '_xtra';
