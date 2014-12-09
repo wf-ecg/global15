@@ -1,4 +1,11 @@
+*.mp4
+*.ogv
+*.pdf
+*.psd
+*.webm
+*.zip
+media*/*/*
+
+npm-debug.log
 node_modules
-.sass-cache
-dist
-.tmp
+*/build/*

@@ -1,0 +1,53 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* PROJ / vids */
+
+.vids {
+    padding: 0 0;
+}
+.vid {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    display: inline-block;
+    float: left;
+    font-size: 9px;
+    height: 220px;
+    margin: 2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 24.5%;
+
+    img {
+        bottom: 0;
+        margin: -5%;
+        position: absolute;
+        width: 110%;
+    }
+    .crop {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        cursor: pointer;
+        height: 116px;
+        margin: 6px;
+        overflow: hidden;
+        position: relative;
+        width: 200px;
+    }
+    &:empty {
+        //display: none;
+    }
+    .crop:after {
+        @include defani;
+        @include transition( all 0.25s ease-out 0s);
+        background-image: url(../images/icons/play.png);
+        bottom: -25px;
+        content: '';
+        height: 66px;
+        position: absolute;
+        right: 0px;
+        width: 66px;
+    }
+    .crop:hover:after {
+        bottom: -10px;
+    }
+}
+// - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - //

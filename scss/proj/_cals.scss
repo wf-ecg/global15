@@ -1,0 +1,62 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* PROJ / cals */
+
+.cal {
+    background-color: #ccc;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    font: normal 12px/1.2 ArialNarrow, sans-serif;
+
+    td {
+    }
+    th {
+        text-align: center;
+        white-space: nowrap;
+    }
+    td, th {
+        background-color: #fff;
+        max-width: 30em;
+        padding: 9px 9px 3px 9px;
+        vertical-align: top;
+    }
+    td.td4 {
+        background-color: #d9d9d9;
+    }
+    td.td5 {
+        background-color: #e6b8b7;
+    }
+    td.td6 {
+        background-color: #dce6f1;
+    }
+    td.td8 {
+        background-color: #ebf1de;
+    }
+    td.td9 {
+        background-color: #eeece1;
+    }
+    td.td10 {
+        background-color: #ddd9c4;
+    }
+    td.td11 {
+        background-color: #e4dfec;
+    }
+    td.td12 {
+        background-color: #c5d9f1;
+    }
+    td.td14 {
+        background-color: #f2dcdb;
+    }
+    td.td15 {
+        background-color: #95b3d7;
+    }
+    td.td16 {
+        background-color: #fcd5b4;
+    }
+    td.td17 {
+        background-color: #daeef3;
+    }
+    td.td18 {
+        background-color: #d8e4bc;
+    }
+}
+// - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - - + - //
