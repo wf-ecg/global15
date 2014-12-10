@@ -20,7 +20,7 @@
     border-radius: 3px;
 }
 .split {
-    columns: 2;
+    @include columns( 2 );
 }
 .teaser {
     margin: 1px 1em 1em 0;
