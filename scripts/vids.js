@@ -17,12 +17,14 @@ function initVids() {
         }).show().find('.vjs-big-play-button').click();
     });
 
-//    var vids = $('.vidwrap video');
-//    vids.each(function() {
-//        videojs(this, {}, function () {
-//            C.log(this);
-//        });
-//    });
+    var vids = $('.vidwrap video');
+
+    vids.each(function () {
+        videojs(this, {}, function () {
+            this.ga(); // track everything
+            C.log(this);
+        });
+    });
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
