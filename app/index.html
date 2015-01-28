@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -5,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
         <META name="robots" content="NOINDEX, NOFOLLOW">
         <title>Home</title>
 
@@ -22,13 +26,13 @@
         <link rel="stylesheet" href="build/screen.css">
 
         <script>location.href.match(/.*(\/[^\.\/]+)+$/)&&(location.href+='/')</script>
-        <script src="./build/boot.min.js"></script>
-        <script src="./build/libs.min.js"></script>
+        <script src="build/boot.js"></script>
+        <script src="build/src.js"></script>
         <!-- endbuild -->
 
         <link rel="stylesheet" href="vendor/nivo-slider/themes/default/default.css" type="text/css" media="screen">
         <link rel="stylesheet" href="vendor/nivo-slider/nivo-slider.css" type="text/css" media="screen">
-        <script src="./vendor/nivo-slider/jquery.nivo.slider.js"></script>
+        <script type="text/javascript" src="vendor/nivo-slider/jquery.nivo.slider.js"></script>
     </head>
     <body>
         <div class="wrap">
@@ -36,11 +40,11 @@
                 <tr>
                     <td>
                         <div id="slider" >
-                            <img alt="banner" src="./images/banners/Quotes-1.jpg">
-                            <img alt="banner" src="./images/banners/Quotes-2.jpg">
-                            <img alt="banner" src="./images/banners/Quotes-3.jpg">
-                            <img alt="banner" src="./images/banners/Quotes-4.jpg">
-                            <img alt="banner" src="./images/banners/Quotes-5.jpg">
+                            <img alt="banner" src="images/banners/Quotes-1.jpg">
+                            <img alt="banner" src="images/banners/Quotes-2.jpg">
+                            <img alt="banner" src="images/banners/Quotes-3.jpg">
+                            <img alt="banner" src="images/banners/Quotes-4.jpg">
+                            <img alt="banner" src="images/banners/Quotes-5.jpg">
                         </div>
                     </td>
                 </tr>
@@ -52,7 +56,8 @@
                                 <li> <a href="./agenda.html"> Agenda & Resources </a>
                                 <li> <a href="./submit.html"> Submit Photos &amp; Video </a>
                                 <li> <a href="./photos.html"> Team Photos </a>
-                                <li> <a href="./awards.html"> Awards Night </a>
+								<li> <a href="./awards.html"> Awards Night </a>
+								<li> <a href="./library.html"> Video Library </a>
                             </ul>
                         </nav>
                     </td>
@@ -64,64 +69,58 @@
                     <td>
                         <section>
                             <!--  -->
-
+						
                             <table>
                                 <tr>
                                     <td width="701">
                                         <div class="teaser">
-                                            <img src="./images/slices/home-head-team.png" alt="team" width="439" height="82">
+                                            <img src="images/slices/home-head-team.png" alt="team" width="439" height="82">
                                             <h2>Welcome to the Global 15 Microsite.</h2>
-                                            <p>This year’s theme — <em>“Winning as a Team: Partner, Trust and Leverage”</em>
-                                                — continues to reinforce our core vision of being an organization where our people are the cornerstone of our business.
-                                                By working as one team, trusting and leveraging our partners and our team members, we can continue to be ever more successful.
-                                                During the Global 15 (G15) conference, our aim is to reinforce and build on our one-team spirit,
-                                                inspire new partnerships, and provide exciting learning opportunities to challenge and inspire you, while deepening your knowledge-base.</p>
-                                            <p>On this microsite, you will find the most current, helpful, and relevant information about G15, including our exciting <strong>program agenda</strong>,
-                                                various <strong>learning and development break-out sessions</strong>,
-                                                our <strong>Product Partner Expo</strong>, <strong>team building activities</strong>, and much more.</p>
-                                            <p>As we will refresh and augment the content provided here, please bookmark this page and visit often.
-                                                We have an exciting G15 program lined up and look forward to a week that will surely be an enhancing and enriching developmental experience.</p>
+                                            <p>This year’s theme -  <em>“Winning as a Team: Partner, Trust and Leverage”</em> - continues to reinforce our core vision of being an organization where our people are the cornerstone of our business. By working as one team, trusting and leveraging our partners and our team members, we can continue to be ever more successful. During the Global 15 (G15) conference, our aim is to reinforce and build on our one-team spirit, inspire new partnerships, and provide exciting learning opportunities to challenge and inspire you, while deepening your knowledge-base.</p>
+                                            <p>On this microsite, you will find the most current, helpful, and relevant information about G15, including our exciting <strong>program agenda</strong>, various <strong>learning and development break-out sessions</strong>, our <strong>Product Partner Expo</strong>, <strong>team building activities</strong>, and much more.</p>
+                                            <p>As we will refresh and augment the content provided here, please bookmark this page and visit often. We have an exciting G15 program lined up and look forward to a week that will surely be an enhancing and enriching developmental experience.</p>
                                         </div>
                                         <hr>
                                         <div class="teaser">
                                             <a href="photos.html">
-                                                <img src="./images/slices/home-photo-1.png" alt="photo-1" width="208" height="132" align="right" style="margin-left: 1em;">
-                                                <img src="./images/slices/home-head-picture.png" alt="picture" width="288" height="58">
+                                                <img src="images/slices/home-photo-1.png" alt="photo-1" width="208" height="132" align="right" style="margin-left: 1em;">
+                                                <img src="images/slices/home-head-picture.png" alt="picture" width="288" height="58">
                                             </a>
-                                            <p> Take a team photo in front of a famous landmark, icon, or building that is specific to your office location or country/state.
-                                                Be creative! Feel free to dress up, use props, and have some fun!
-                                                These photos are not limited to a physical office — you may also take photos of your business group
-                                                (e.g. GFI COR, GFI CSU), or with product and support partners.</p>
+                                            <p> Take a team photo in front of a famous landmark, icon, or building that is specific to your office location or country/state. Be creative! Feel free to dress up, use props, and have some fun! These photos are not limited to a physical office - you may also take photos of your business group (e.g. GFI COR, GFI CSU), or with product and support partners.</p>
                                         </div>
                                         <hr>
                                         <div class="teaser">
                                             <a href="submit.html">
-                                                <img src="./images/slices/home-photo-2.jpg" alt="photo-2" width="208" height="132" align="right" style="margin-left: 1em;">
-                                                <img src="./images/slices/home-head-action.png" alt="action" width="288" height="58">
+                                                <img src="images/slices/home-photo-2.jpg" alt="photo-2" width="208" height="132" align="right" style="margin-left: 1em;">
+                                                <img src="images/slices/home-head-action.png" alt="action" width="288" height="58">
                                             </a>
-                                            <p> Create a 1-3 minute video that shows your office’s interpretation of the G15 theme — <em>"Winning as a Team: Partner, Trust and Leverage"</em>.
-                                                Have fun! Perform a skit, spoof a movie, or sing a song.
-                                                Feel free to include GFI team members, Support and Product Partners in this video.</p>
+                                            <p> Create a 1-3 minute video that shows your office’s interpretation of the G15 theme - <em>"Winning as a Team: Partner, Trust and Leverage"</em>. Have fun! Perform a skit, spoof a movie, or sing a song. Feel free to include GFI team members, Support and Product Partners in this video.</p>
                                         </div>
                                         <hr>
                                     </td>
                                     <td width="223" style="padding-top:42px;">
-
-                                        <img src="./images/slices/home-tile-global_mid.png" alt=“Global15">
-                                        <br>
-
+                                    
+                                            <img src="images/slices/home-tile-global_mid.png" alt=“Global15">
+                                            <br>
+                                        
                                         <div class="teaser orange outline">
                                             <h2>January 26 – 29, 2015<br>Terranea<br>6610 Palos Verdes Drive<br>Rancho Palos Verdes, CA</h2>
                                         </div>
+                                  
+                                        <a href="docs/G15_bios_book.pdf" target="_blank"><img src="images/slices/home_biobook_tile.jpg" alt="Bio Book - Download Now" border="0"></a>
+                                            <br>
 
                                         <div class="teaser outline" style="color:#bb0826;">
-                                            <h2>Give us a smile!</h2>
-                                            <p>We are seeking headshots of all G15 attendees for inclusion in the <strong>G15 Bios booklet</strong>.
-                                                Please send us your headshot— it can be your professional photo from your corporate bio or a selfie— to <a href="mailto:GFI@wellsfargo.com" target="_blank" style="text-decoration:underline">GFI@wellsfargo.com</a>. We need all headshots in by <strong>December 8, 2014</strong>.</p>
+                                            <h2>Dress code</h2>
+                                            <p><strong>Meetings &amp; sessions:</strong><br>
+                                            		Business casual</p>
+                                            <p><strong>Awards dinner:</strong>
+                                            		<br>
+                                            		Dress to impress! In keeping with our theme and to celebrate our international presence <strong>we ask every attendee to wear something that denotes/symbolizes your country of residence and/or your national dress.</strong> <em>For example: a kimono or Turkish flag scarf with cocktail attire; or a British flag tie with your suit. Be creative!</em></p>
                                         </div>
                                         <div class="teaser outline">
                                             <h2><strong>Agenda &amp; Resources</strong></h2>
-                                            <p>To get ready for three powerful days of meetings and networking, please review useful pre-event information — including agendas, break-out sessions, and more.</p>
+                                            <p>To get ready for three powerful days of meetings and networking, please review useful pre-event information - including agendas, break-out sessions, and more.</p>
                                             <p><strong><a href="agenda.html">Agenda & Resources &gt;</a></strong></p>
                                         </div>
                                     </td>
@@ -145,8 +144,7 @@
         <p>&nbsp;</p>
         <!--[if IE]>
             <script>window.isIE = true;$(function(){ $('html').addClass('msie'); });</script>
-            <script src="./vendor/msie/rem.min.js"></script>
+            <script src="vendor/msie/rem.min.js"></script>
         <![endif]-->
-        <script src="./build/main.js"></script>
     </body>
 </html>
