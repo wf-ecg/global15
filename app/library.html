@@ -32,6 +32,19 @@
         <link rel="stylesheet" href="vendor/nivo-slider/themes/default/default.css" type="text/css" media="screen">
         <link rel="stylesheet" href="vendor/nivo-slider/nivo-slider.css" type="text/css" media="screen">
         <script src="./vendor/nivo-slider/jquery.nivo.slider.js"></script>
+
+        <link href="/lib/video-js/ecg/video-js.css" rel="stylesheet" type="text/css">
+        <!-- video.js must be in the <head> for older IEs to work. -->
+        <script src="/lib/video-js/ecg/video.js"></script>
+
+        <script src="/lib/js/ga-ecg.js"></script>
+        <script src="/lib/video-js/videojs.ga.js"></script>
+
+        <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+        <script>
+            videojs.options.flash.swf = "/lib/video-js/ecg/video-js.swf";
+        </script>
+
     </head>
     <body>
         <div class="wrap">
@@ -75,20 +88,18 @@
                                     <dt class="active">General sessions</dt>
                                     <dd class="active vids">
                                         <div class="vid">
-                                            <div class="crop">
-                                                <img alt="Chuck Silverman" src="./images/videoLibrary/Chuck_Silverman_Welcome_Winning_as_a_Team.jpg">
+                                            <div class="crop" data-vid="#video_1">
+                                                <img alt="Chuck Silverman" src="http://www.wellsfargomedia.com/global15/images/videoLibrary/Chuck_Silverman_Welcome_Winning_as_a_Team.jpg">
                                             </div>
                                             <p><a><strong>Winning as a Team: Partner, Trust, Leverage:</strong> A Welcome Message and Conversation with <strong>Chuck Silverman</strong></a></p>
-                                            <p> Length: 1hr 12min
-                                            </p>
+                                            <p> Length: 1hr 12min </p>
                                         </div>
                                         <div class="vid">
-                                            <div class="crop">
-                                                <img alt="Risk Management Panel" src="./images/videoLibrary/Risk_Management_as_a_Competitive_Advantage_Final.jpg">
+                                            <div class="crop" data-vid="#video_2">
+                                                <img alt="Risk Management Panel" src="http://www.wellsfargomedia.com/global15/images/videoLibrary/Risk_Management_as_a_Competitive_Advantage_Final.jpg">
                                             </div>
                                             <p><a><strong>Risk Management as a Competitive Advantage</strong> Panel Session. Moderated by <strong>Dominic O'Hagan</strong></a></p>
-                                            <p> Length: 1hr 18min
-                                            </p>
+                                            <p> Length: 1hr 18min </p>
                                         </div>
                                         <div class="vid"></div>
                                         <div class="vid"></div>
@@ -150,6 +161,24 @@
                 </tr>
             </table>
         </div>
+
+        <div class="vidwrap" id="video_1">
+            <video class="video-js vjs-default-skin"
+                   controls preload="none" width="640" height="360"
+                   poster="./images/videoLibrary/vid1-poster.jpg" data-setup="{}">
+                <source src="http://www.wellsfargomedia.com/global15/videos/events/Chuck_Silverman_Welcome_Winning_as_a_Team.mp4" type='video/mp4' />
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+            </video>
+        </div>
+        <div class="vidwrap" id="video_2">
+            <video class="video-js vjs-default-skin"
+                   controls preload="none" width="640" height="360"
+                   poster="./images/videoLibrary/vid2-poster.jpg" data-setup="{}">
+                <source src="http://www.wellsfargomedia.com/global15/videos/events/Risk_Management_as_a_Competitive_Advantage_Final.mp4" type='video/mp4' />
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+            </video>
+        </div>
+
         <p>&nbsp;</p>
         <!--[if IE]>
             <script>window.isIE = true;$(function(){ $('html').addClass('msie'); });</script>

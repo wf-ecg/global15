@@ -24,4 +24,37 @@ body {/* test */
 .gallery-image-link:hover {
     background-color: #cccccc;
 }
+.vidwrap {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    div.video-js {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &:after {
+            color: white;
+            content: 'CLICK OUTSIDE VIDEO TO CLOSE';
+            display: block;
+            font-size: 12px;
+            position: relative;
+            text-align: center;
+            top: -3em;
+        }
+    }
+    .vjs-big-play-button {
+        display: none !important;
+    }
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

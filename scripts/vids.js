@@ -5,10 +5,25 @@
 function initVids() {
     'use strict';
 
-    var ele = $('.vids');
+    var tmbs = $('.vids');
 
-    ele.one('click', '.crop', function () {
-        window.alert('play');
+    tmbs.one('click', '.crop', function () {
+        var wrap = $($(this).data('vid'));
+
+        wrap.on('click', function (evt) {
+            if ($(evt.target).is(wrap)) {
+                W.location.reload();
+            }
+        }).show().find('.vjs-big-play-button').click();
+    });
+
+    var vids = $('.vidwrap video');
+
+    vids.each(function () {
+        videojs(this, {}, function () {
+            this.ga(); // track everything
+            C.log(this);
+        });
     });
 }
 
