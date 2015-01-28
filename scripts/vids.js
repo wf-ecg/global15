@@ -8,7 +8,10 @@ function initVids() {
     var ele = $('.vids');
 
     ele.one('click', '.crop', function () {
-        window.alert('play');
+        //window.alert('play');
+        var ele = $(this).data('vid');
+        ele = $(ele);
+        ele.show();
     });
 }
 
