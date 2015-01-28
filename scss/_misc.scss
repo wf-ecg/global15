@@ -42,6 +42,16 @@ body {/* test */
         position: absolute;
         right: 0;
         top: 0;
+
+        &:after {
+            color: white;
+            content: 'CLICK OUTSIDE VIDEO TO CLOSE';
+            display: block;
+            font-size: 12px;
+            position: relative;
+            text-align: center;
+            top: -3em;
+        }
     }
     .vjs-big-play-button {
         display: none !important;
