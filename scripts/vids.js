@@ -5,18 +5,24 @@
 function initVids() {
     'use strict';
 
-    var ele = $('.vids');
+    var tmbs = $('.vids');
 
-    ele.one('click', '.crop', function () {
-        var ele = $(this).data('vid');
-        ele = $(ele);
+    tmbs.one('click', '.crop', function () {
+        var wrap = $($(this).data('vid'));
 
-        ele.on('click', function (evt) {
-            if ($(evt.target).is(ele)) {
+        wrap.on('click', function (evt) {
+            if ($(evt.target).is(wrap)) {
                 W.location.reload();
             }
-        }).show();
+        }).show().find('.vjs-big-play-button').click();
     });
+
+//    var vids = $('.vidwrap video');
+//    vids.each(function() {
+//        videojs(this, {}, function () {
+//            C.log(this);
+//        });
+//    });
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
