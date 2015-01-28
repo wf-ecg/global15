@@ -33,13 +33,13 @@
         <link rel="stylesheet" href="vendor/nivo-slider/nivo-slider.css" type="text/css" media="screen">
         <script src="./vendor/nivo-slider/jquery.nivo.slider.js"></script>
 
-        <link href="/lib/video-js/dcg/video-js.css" rel="stylesheet" type="text/css">
+        <link href="/lib/video-js/ecg/video-js.css" rel="stylesheet" type="text/css">
         <!-- video.js must be in the <head> for older IEs to work. -->
-        <script src="/lib/video-js/dcg/video.js"></script>
+        <script src="/lib/video-js/ecg/video.js"></script>
 
         <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
         <script>
-            _V_.options.flash.swf = "/lib/video-js/dcg/video-js.swf";
+            videojs.options.flash.swf = "/lib/video-js/ecg/video-js.swf";
         </script>
 
     </head>
@@ -162,7 +162,7 @@
         <div class="vidwrap" id="video_1">
             <video class="video-js vjs-default-skin"
                    controls preload="none" width="640" height="360"
-                   poster="http://www.wellsfargomedia.com/global15/images/videoLibrary/Chuck_Silverman_Welcome_Winning_as_a_Team.jpg" data-setup="{}">
+                   poster="./images/videoLibrary/vid1-poster.jpg" data-setup="{}">
                 <source src="http://www.wellsfargomedia.com/global15/videos/events/Chuck_Silverman_Welcome_Winning_as_a_Team.mp4" type='video/mp4' />
                 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
             </video>
@@ -170,7 +170,7 @@
         <div class="vidwrap" id="video_2">
             <video class="video-js vjs-default-skin"
                    controls preload="none" width="640" height="360"
-                   poster="http://www.wellsfargomedia.com/global15/images/videoLibrary/Risk_Management_as_a_Competitive_Advantage_Final.jpg" data-setup="{}">
+                   poster="./images/videoLibrary/vid2-poster.jpg" data-setup="{}">
                 <source src="http://www.wellsfargomedia.com/global15/videos/events/Chuck_Silverman_Welcome_Winning_as_a_Team.mp4" type='video/mp4' />
                 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
             </video>

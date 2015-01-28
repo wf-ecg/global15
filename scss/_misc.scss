@@ -25,23 +25,26 @@ body {/* test */
     background-color: #cccccc;
 }
 .vidwrap {
-    bottom: 0;
-    display: none;
     background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     height: 100%;
     left: 0;
     position: absolute;
-    right: 0;
     top: 0;
     width: 100%;
     z-index: 999;
-}
-div.video-js {
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
+
+    div.video-js {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .vjs-big-play-button {
+        display: none !important;
+    }
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
