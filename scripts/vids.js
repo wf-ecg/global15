@@ -5,7 +5,7 @@
 function initVids() {
     'use strict';
 
-    var tmbs = $('.vids');
+    var tmbs = $('.wrap'); // wider search
 
     tmbs.one('click', '.crop', function () {
         var wrap = $($(this).data('vid'));
