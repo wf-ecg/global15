@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <META name="robots" content="NOINDEX, NOFOLLOW">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Photo Gallery</title>
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+        <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-precomposed.png">
+
+        <!-- Page styles -->
+        <link rel="stylesheet" href="build/screen.css">
+        <link rel="stylesheet" href="vendor/lightbox/css/lightbox.css">
+
+        <!-- build:js scripts/example.js -->
+        <script src="./build/boot.min.js"></script>
+        <script src="./build/libs.min.js"></script>
+        <!-- endbuild -->
+        <script src="/lib/jquery/1.8.2/jquery.js"></script>
+        <script src="./vendor/galleria/galleria-1.2.9.js"></script>
+        <script>
+            Galleria.loadTheme('./vendor/galleria/galleria.classic.min.js');
+            Galleria.run('#galleria');
+        </script>
+        <style>
+            #galleria {
+                height: 570px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+            .galleria-image img {
+                margin:0;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="wrap">
+            <table>
+                <tr>
+                    <td>
+                        <img alt="banner" src="./images/banners/photos.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <nav>
+                            <ul>
+                                <li> <a href="./index.html"> Home </a>
+                                <li> <a href="./agenda.html"> Agenda & Resources </a>
+                                <li> <a href="./videos.html"> Team Videos </a>
+                                <li> <a href="./photos.html"> Team Photos </a>
+                                <li> <a href="./awards.html"> Awards Night </a>
+                                <li> <a href="./library.html"> Video Library </a>
+                                <li class="active"> <a href="./gallery_welcome.html"> Photo Gallery </a>
+                            </ul>
+                        </nav>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <section>
+                            <h1> Photo Gallery </h1>
+                            <table>
+                                <tr>
+                                    <td width="701">
+                                        <article>
+                                            <p><strong><a href="gallery_welcome.html">Welcome Reception</a></strong> | <a href="gallery_general.html">General Session</a> | <a href="gallery_team.html">Team Activities</a> | <a href="gallery_expo.html">Product Expo</a> | <a href="gallery_partner.html">Product Partner Planning</a> | <br><a href="gallery_awards.html">Awards Ceremony</a> | <a href="gallery_misc.html">Miscellaneous</a></p>
+                                        </article>
+                                    </td>
+                                    <td width="223"><img src="./images/slices/home-tile-global_mid.png" alt="Global15"></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <article class="pics">
+
+                                            <div id="galleria">
+                                                <script language="javascript" type="text/javascript">
+
+                                                    var myArray = ["IMG_2024","IMG_2025","IMG_2029","IMG_2031","IMG_2032","IMG_2033","IMG_2038","IMG_2040","IMG_2044","IMG_2045","IMG_2046","IMG_2047","IMG_2048","IMG_2051","IMG_2052","IMG_2053","IMG_2054","IMG_2055","IMG_2056","IMG_2057","IMG_2058","IMG_2059","IMG_2060","IMG_2061","IMG_2062","IMG_2063","IMG_2064","IMG_2065","IMG_2066","IMG_2067","IMG_2069","IMG_2070"];
+                                                    for (var i=0; i<myArray.length; i++) {
+                                                        document.write('<a href="./images/gallery/750/welcome/' + myArray[i] + '.jpg"><img src="./images/gallery/100/welcome/' + myArray[i] + '.jpg" data-title="' + myArray[i] + ' / Global 15 / Welcome Reception" data-description="<a href=./images/gallery/750/welcome/' + myArray[i] +  '.jpg target=_blank>Download full size</a>"></a>');
+                                                    }
+
+                                                </script>
+                                            </div>
+
+                                        </article>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--  -->
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td bgcolor="#DFE2E1">
+                        <p>@ 2014 Wells Fargo Bank, N.A. All rights reserved. Internal use only. ECG-1218486</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p>&nbsp;</p>
+        <script src="./vendor/lightbox/js/jquery-1.11.0.min.js"></script>
+        <!--[if IE]>
+            <script>window.isIE = true;$(function(){ $('html').addClass('msie'); });</script>
+            <script src="./vendor/msie/rem.min.js"></script>
+        <![endif]-->
+        <script src="./build/main.js"></script>
+    </body>
+</html>
