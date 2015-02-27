@@ -10,3 +10,6 @@ npm-debug.log
 node_modules
 */build/*
 app/images/*
+app/vendor/lightbox/img/demopage/
+app/vendor/lightbox/js/
+app/vendor/magnific/
