@@ -24,7 +24,10 @@
         <!-- Page styles -->
         <link rel="stylesheet" href="build/screen.css">
 
-        <script>location.href.match(/.*(\/[^\.\/]+)+$/)&&(location.href+='/')</script>
+        <!--  -->
+        <script>(function(l,i,s,t){s=l.pathname;t=s.toLowerCase().replace(/index/,i||'index');t=t.match
+            (/\w+\.\w+$/)?t:t.replace(/\/*$/,'/index.html');if(t!==s)l.pathname=t;}(location));</script>
+        <!--  -->
         <script src="./build/boot.min.js"></script>
         <script src="./build/libs.min.js"></script>
         <!-- endbuild -->
