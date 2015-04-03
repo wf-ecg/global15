@@ -1,14 +1,3 @@
-*.mp4
-*.ogv
-*.pdf
-*.psd
-*.webm
-*.zip
-media*/*/*
-
-npm-debug.log
-node_modules
-*/build/*
 app/images/*
 app/vendor/lightbox/img/demopage/
 app/vendor/lightbox/js/
