@@ -1,2 +1,2 @@
 [rsync]
-remote = localhost:/.repo/media/global15
+remote = localhost:/.repo/media/global
